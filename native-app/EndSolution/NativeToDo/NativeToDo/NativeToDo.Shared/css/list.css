@@ -1,0 +1,42 @@
+﻿/* Task List Shared Styles*/
+.taskItem {
+    display:-ms-grid;
+}
+
+.taskItem > .itemDetails {
+    -ms-grid-column: 1;
+    -ms-grid-row-align:center;
+    overflow:hidden;
+}
+
+.taskItem > .itemStatus {
+    -ms-grid-column: 2;
+    -ms-grid-row-align:center;
+    -ms-grid-column-align:center;
+ }
+
+.taskItem > .itemActions {
+    -ms-grid-column: 3;
+    -ms-grid-row-align:center;
+    -ms-grid-column-align:center;
+}
+
+.actionButton {
+    border:none;
+}
+
+.actionButton:hover {
+    background-color:transparent;
+}
+
+.actionButton:hover:active {
+    background-color:transparent;
+}
+
+.menuIcon {
+    font-family: 'Segoe UI Symbol';
+}
+
+.remove {
+    color:red;
+}

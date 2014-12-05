@@ -1,0 +1,39 @@
+﻿.mainContent {
+     margin: 20px;
+}
+
+/* Task List Shared Styles*/
+.taskItem {
+     -ms-grid-columns: 1fr 75px 40px;
+}
+
+.taskItem > .itemDetails > h2 {
+    font-size: 16pt;
+}
+
+.taskItem > .itemStatus {
+    padding-bottom:0;
+}
+
+.actionButton {
+    width:30px;
+    height:30px;
+    min-width:30px;
+    min-height:30px;
+}
+
+.addTaskControl {
+    display:-ms-grid;
+    -ms-grid-columns: 1fr 100px;
+}
+
+.addTaskControl #newToDoText {
+    -ms-grid-column:1;
+}
+
+.addTaskControl #addButton {
+    -ms-grid-column:2;
+    -ms-grid-column-align:center;
+    min-width:80px;
+}
+

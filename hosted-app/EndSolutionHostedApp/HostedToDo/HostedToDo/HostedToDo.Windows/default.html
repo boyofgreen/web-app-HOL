@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HostedToDo.Windows</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <!-- HostedToDo.Windows references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div class="welcome-message">
+        <div id="welcome">
+            <span id="close">x</span>
+            <div class="message">
+                <h2>Welcome to the To Do application!</h2>
+                <div class="features">
+                    <p>Add new tasks to your list, just type a description and click Add.</p>
+                    <p>Delete tasks by clicking the red <span style="color:red">x</span> next to it.</p>
+                    <p>Toggle the completion status of a task by checking/unchecking the checkbox.</p>
+                </div>
+                <p>Thanks for using To Do!</p> 
+            </div>
+        </div>
+    </div>
+    <x-ms-webview id="webview" src="%WebsiteURL%">
+    </x-ms-webview>
+    <script src="/js/eventhandlers.js"></script>
+</body>
+</html>

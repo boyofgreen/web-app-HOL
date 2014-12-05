@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section Styles {
+    @Styles.Render("~/Content/todo.css")
+}
+
+<div id="todo-view" ng-app="site-todo">
+    <section id="todoapp" ng-controller="ToDoCtrl">
+        <header id="header">
+            <div id="headerBand"></div>
+
+            <div class="header-content">
+                <textarea id="new-todo" rows="1" placeholder="what needs to be done?" ng-model="newTodoItem"></textarea>
+                <button id="add-todo-button" ng-click="addToDoItem()">+</button>
+            </div>
+        </header>
+
+        <h1>My ToDo's</h1>
+
+        <section id="main" ng-show="todos.length">
+            <div ng-repeat="todo in todos track by $index" ng-class="{completed: todo.Completed}">
+                <div class="todo-item">
+                    <input type="hidden" ng-model="todo.Id" />
+                    <input class="toggle" type="checkbox" ng-model="todo.Completed" ng-change="toggleCompleted(todo)">
+                    <span>{{todo.Title}}</span>
+                    <button class="destroy" ng-click="removeTodoItem(todo)">x</button>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/app")
+}

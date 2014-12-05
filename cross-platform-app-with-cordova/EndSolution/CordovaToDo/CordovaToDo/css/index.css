@@ -1,0 +1,139 @@
+﻿html,
+body {
+     padding: 0;
+     background: #F7f7f7;
+     color: #4d4d4d;
+     margin: 0 auto;
+     font: 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     line-height: 1.4em;
+     width: 100%;
+}
+
+/* no outline for buttons & checkboxes*/
+button,
+input[type="checkbox"] {
+     outline: none;
+}
+
+textarea {
+     overflow: hidden;
+}
+
+button.destroy {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     background: none;
+     font-size: 24px;
+     font-weight: bolder;
+     color: darkred;
+}
+
+.todo-item span {
+     font-size: 18px;
+}
+
+#main .completed span {
+     text-decoration: line-through;
+}
+
+#todoapp {
+     background: rgba(255, 255, 255, 0.9);
+     border: 1px solid #ccc;
+     position: relative;
+     border-top-left-radius: 2px;
+     border-top-right-radius: 2px;
+     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+     height: 99vh;
+     min-height: 99vh;
+     margin: 0;
+     overflow-y: auto;
+}
+
+/* section styles*/
+@media (min-width: 550px) {
+     #todoapp {
+          width: 74vw;
+          left: 13vw;
+          top: 50px;
+          height: 85vh;
+          min-height: 85vh;
+     }
+}
+
+#todoapp:before {
+     content: '';
+     border-left: 1px dotted #888;
+     z-index: 2;
+     width: 0;
+     position: absolute;
+     top: 0;
+     left: 40px;
+     height: 100%;
+}
+
+/* dark band on the header*/
+#headerBand {
+     position: relative;
+     height: 4vh;
+     max-height: 20px;
+     border-bottom: 1px solid #6c615c;
+     background: rgba(52, 59, 69, 1);
+     border-top-left-radius: 1px;
+     border-top-right-radius: 1px;
+}
+
+.header-content {
+     background: rgba(237, 237, 237, 0.9);
+     position: relative;
+}
+
+#new-todo {
+     background: rgba(237, 237, 237, 0.9);
+     position: relative;
+     height: 10vh;
+     max-height: 70px;
+     font-size: 21px;
+     font-family: "Arial";
+     outline: none;
+     color: rgb(114, 115, 115);
+     padding: 20px 0 0 50px;
+     border: 0;
+     margin: 0;
+     width: calc(100% - 100px);
+}
+
+#add-todo-button {
+     top: 0;
+     width: 50px;
+     height: auto;
+     right: 0;
+     bottom: 0;
+     position: absolute;
+     max-height: none;
+     background: #ccc;
+     display: inline-block;
+     font-size: 32px;
+     font-weight: bold;
+     font-family: "Arial";
+     border: 0;
+     margin: 0;
+     padding: 0;
+     outline: none;
+}
+
+#todoapp h1 {
+     font-size: 28px;
+     font-weight: bold;
+     color: #555;
+     color: rgba(255, 255, 255, 0.3);
+     text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+     padding: 0 50px;
+}
+
+/* the main section that hosts the listview*/
+#main {
+     padding: 20px 54px;
+     z-index: 1;
+     border-top: 1px dotted #adadad;
+}

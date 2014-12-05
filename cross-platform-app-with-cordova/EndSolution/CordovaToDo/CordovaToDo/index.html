@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CordovaToDo</title>
+
+    <!-- CordovaToDo references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body ng-app="cordova-todo">
+    <section id="todoapp" ng-controller="ToDoCtrl">
+        <header id="header">
+            <div id="headerBand"></div>
+
+            <div class="header-content">
+                <textarea id="new-todo" rows="1" placeholder="what needs to be done?" ng-model="newTodoItem"></textarea>
+                <button id="add-todo-button" ng-click="addToDoItem()">+</button>
+            </div>
+        </header>
+
+        <h1>My ToDo's</h1>
+
+        <section id="main" ng-show="todos.length">
+            <div ng-repeat="todo in todos track by $index" ng-class="{completed: todo.completed}">
+                <div class="todo-item">
+                    <input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+                    <span>{{todo.title}}</span>
+                    <button class="destroy" ng-click="removeTodoItem(todo)">x</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>

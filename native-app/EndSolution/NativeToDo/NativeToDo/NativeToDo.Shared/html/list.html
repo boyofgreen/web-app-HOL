@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/js/data.js"></script>
+    <script src="/js/todolist.js"></script>
+    <script src="/js/checkbox.js"></script>
+    <link href="/css/list.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-win-control="ToDoList">
+        <div class="addTaskControl">
+            <input id="newToDoText" type="text" />
+            <button id="addButton">Add</button>
+        </div>
+
+        <h1>My ToDo's</h1>
+
+        <!-- Simple template for the ListView instantiation  -->
+        <div id="taskTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+            <div class="taskItem">
+                <div class="itemDetails">
+                    <h2 data-win-bind="innerText: text"></h2>
+                </div>
+                <div class="itemStatus" data-win-control="MyApp.UI.Checkbox" data-win-bind="onchange: toggle; winControl.checked: complete" data-win-options="{labelOn: ' ', labelOff: ' '}">
+                </div>
+                <div class="itemActions">
+                    <button class="actionButton remove" data-win-bind="onclick: remove;">
+                        <span class="menuIcon">&#xE106;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="listView"
+             class="win-selectionstylefilled"
+             data-win-control="WinJS.UI.ListView"
+             data-win-options="{ itemDataSource: Data.itemList.dataSource,
+                     itemTemplate: taskTemplate,
+                     selectionMode: 'none',
+                     tapBehavior: 'invoke',
+                     layout: { type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical }
+                }"></div>
+    </div>
+</body>
+</html>
