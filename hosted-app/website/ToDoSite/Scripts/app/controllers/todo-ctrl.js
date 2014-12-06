@@ -1,6 +1,6 @@
 ﻿'use strict'
 
-angular.module('site-todo').controller('ToDoCtrl', function ToDoCtrl($scope, ToDoStorage) {
+angular.module('site-todo').controller('ToDoCtrl', ['$scope', 'ToDoStorage', function($scope, ToDoStorage) {
     var todos = $scope.todos = ToDoStorage.list();
     $scope.newTodoItem = '';
 
@@ -24,4 +24,4 @@ angular.module('site-todo').controller('ToDoCtrl', function ToDoCtrl($scope, ToD
     $scope.toggleCompleted = function (todo) {
         ToDoStorage.update(todo);
     };
-});
+}]);

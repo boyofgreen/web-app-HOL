@@ -11,7 +11,7 @@ You can use the extension to build apps for the following devices and platforms:
 - Windows Phone 8 and 8.1
 
 <!-- In this lab you will: create a native mobile cross-platform application using Apache Cordova. You will also learn how to use Visual Studio Tooling for Cordova to build and debug cross-platform applications. -->
-This lab includes instructions for:
+This hands-on lab includes the following tasks:
 
 1. [Building a cross-platform packaged app with Cordova](#BuildCordovaApp)
 2. [Using Visual Studio to debug the application in multiple platforms](#DebuggingAppInMultiplePlatforms)
@@ -19,7 +19,7 @@ This lab includes instructions for:
 <a name="BuildCordovaApp" />
 ##Building a cross-platform packaged app with Cordova
 
-In this task you will learn how to build a cross-platform app using JavaScript, HTML and AngularJS. The app is a simple To Do List app that allows adding To Do items consisting of a description. It is also possible to delete them and toggle their completed status. 
+In this task you will learn how to build a cross-platform app using JavaScript, HTML and AngularJS. The app is a simple To Do List app that allows you to add To Do items along with a description. It is also possible to delete them and toggle their completed status. 
 
 The focus will be on the creation of the project using Visual Studio. However, it is possible to use **Apache Cordova command-line interface (CLI)** to create the application. For instructions on how to create the application using the CLI follow the instructions at [Building the application using Apache Cordova CLI](#CreateSolutionUsingCLI)
 
@@ -35,7 +35,7 @@ The first step is to create a new project to contain the code and resources that
 
 	The new project will contain just one JS project named **CordovaToDo (Tools for Apache Cordova)**.
 
-	Since the app will use Angular controls, you need to install the AngularJS libraries. Anyother framework, like backbound or WinJS, could have been used. After that you will add all other required files.
+	Since the app uses Angular controls, you will install the AngularJS libraries (though any other framework like backbound or WinJS could have been used). After that, you will add all other required files.
 
 	<a name="BuildCordovaAppStep2" />
 1. Open the **Package Manager console** (from the **Tools** menu, click **NuGet Package Manager** and then **Package Manager Console**). 
@@ -49,13 +49,13 @@ The first step is to create a new project to contain the code and resources that
 	````PowerShell
 	Install-Package AngularJS.Core
 	````
-	Wait until the AngularJS package is downloaded and installed.
+	Wait for the AngularJS package to download and install.
 
 	![Install AngularJS Package](images/install-angularjs-package.png?raw=true)
 
 	_Install AngularJS Package from the Package Manager Console_
 
-1. Open **index.html** and insert a _script_ tag to include AngularJS as shown below in the _body_ element. Make sure that it is added after the reference of cordova.
+1. Open **index.html** and insert a _script_ tag to include AngularJS as shown below in the _body_ element. Make sure that it is added after the Cordova reference.
 
 	<!-- mark:5 -->
 	````HTML
@@ -266,7 +266,7 @@ The first step is to create a new project to contain the code and resources that
 
 	Now you will include the code for the application and update the main page (**index.html**) to display the elements that make up the application user interface.
 
-1. Open **index.html** and insert the _script_ tag targeting the app.js file created before in the _body_ element after the include of AngularJS added before.
+1. Open **index.html** and insert the _script_ tag targeting the app.js file in the _body_ element, between the _AngularJS_ and _index.js_ reference.
 	
 	<!-- mark:6 -->
 	````HTML
@@ -340,23 +340,23 @@ The first step is to create a new project to contain the code and resources that
 
 	_Icons for all platforms are under res/icons_
 
-1. Open a file explorer and browse to the folder **res\icons** of your **CordovaToDo** project. Replace the files under the each platform folder by the ones in this repository.
+1. Open a file explorer and browse to the folder **res\icons** of your **CordovaToDo** project. Replace the files under each platform folder with the ones in this repository.
 	
 	* windows: [res\icons\windows](EndSolution/CordovaToDo/CordovaToDo/res/icons/windows)
 	* windows phone: [res\icons\wp8](EndSolution/CordovaToDo/CordovaToDo/res/icons/wp8)
 	* android: [res\icons\android](EndSolution/CordovaToDo/CordovaToDo/res/icons/android)
 	* iOS: [res\icons\iOS](EndSolution/CordovaToDo/CordovaToDo/res/icons/iOS)
 
-1. Still in the file explorer, change into the folder **res\screens** of your **CordovaToDo** project. Replace the files under the each platform folder by the ones in this repository.
+1. Still in the file explorer, go to the **res\screens** folder of your **CordovaToDo** project. Replace the files under each platform folder with the ones in this repository.
 	
 	* windows: [res\screens\windows](EndSolution/CordovaToDo/CordovaToDo/res/screens/windows)
 	* windows phone: [res\screens\wp8](EndSolution/CordovaToDo/CordovaToDo/res/screens/wp8)
 	* android: [res\screens\android](EndSolution/CordovaToDo/CordovaToDo/res/screens/android)
 	* iOS: [res\screens\iOS](EndSolution/CordovaToDo/CordovaToDo/res/screens/iOS)
 
-1. Switch back to Visual Studio and close the tab for **config.xml**. 
+1. Switch back to Visual Studio and close the **config.xml** tab. 
 
-	In the next step you will open it again in "code" mode instead of using the Designer, so the background color can be set. 
+	In the next step you will open it again in "code" mode instead of using the Designer, so we can set the background color. 
 
 1. In the Solution Explorer windows, right-click **config.xml** and click **View Code**.
 
@@ -364,7 +364,7 @@ The first step is to create a new project to contain the code and resources that
 
 	_Click View Code for file config.xml_
 
-1. Once the xml view of the file has loaded, insert the BackgroundColor line as shown below:
+1. You should see the xml view of the file. Insert the BackgroundColor line as shown below:
 
 	<!-- mark:5 -->
 	````XML
@@ -388,7 +388,7 @@ The first step is to create a new project to contain the code and resources that
 
 	_Contents of the project_
 	
-	To build and run the application you need to select a target platform. You can do so from the **Solution Platforms** dropdown in the toolbar. If the **Solutions Platform** dropdown list is not showing, you can display it by clicking the Add or Remove buttons in the toolbar and then checking **Solution Platforms**.
+	To build and run the application you will select a target platform from the **Solution Platforms** dropdown in the toolbar. If the **Solutions Platform** dropdown list is not showing, you can display it by clicking the Add or Remove buttons in the toolbar and then selecting **Solution Platforms**.
 
 	![Show Solution Platforms list in toolbar](images/show-solution-platforms-list-in-toolbar.png?raw=true)
 
@@ -410,7 +410,7 @@ The first step is to create a new project to contain the code and resources that
 
 1. Press **F5** to build and launch the application in the selected emulator. 
 	
-	After being built, the selected emulator will be started. The app will be deployed and launched. You should see the splash screen and then the interface of the app, where the list of tasks should be visible. It should be possible to add new tasks, remove existing tasks or update the tasks status.
+	After being built, the selected emulator will be started. The app will be deployed and launched. You should see the splash screen and then the interface of the app, where the list of tasks should be visible. It should be possible to add new To Do items, remove existing ones or update the status for one.
 
 	![Launch app in selected wp emulator](images/launch-app-in-selected-wp-emulator.png?raw=true)
 
@@ -419,11 +419,11 @@ The first step is to create a new project to contain the code and resources that
 <a name="DebuggingAppInMultiplePlatforms" />
 ##Debugging the application in Multiple Platforms
 
-In this part of the lab you will learn how to run or debug your application in different platforms like Android, Windows 8 and Windows Phone. 
+In this part of the lab you will learn you how you can run or debug your application in different platforms like Android, Windows 8 and Windows Phone. 
 You can find more information about debugging applications that use Apache Cordova [here](http://msdn.microsoft.com/en-us/library/dn757061.aspx).
 
 ###Debugging in Windows simulator
-Follow these steps to debug your application in a simulator of Windows. The same Visual Studio debugging tools that you would use for any Windows Store app built using HTML and JavaScript are available.
+Follow these steps to debug your application in a Windows simulator. The same Visual Studio debugging tools that you would use for any Windows Store app built using HTML and JavaScript are available.
 
 1. In the **Solution Platforms** list, select **Windows-AnyCPU**.
 
@@ -436,7 +436,7 @@ Follow these steps to debug your application in a simulator of Windows. The same
 1. Press **F5** to build and debug the application. 
 	The app should launch in the Simulator. If this does not happen the first time the Simulator is launched, try again.
 
-	The Simulator will first display a splash screen like the one below and then the To Do list. You should be able to use all the functionality of the application.
+	The Simulator will first display a splash screen like the one below and then the To Do list. You should be able to use all functionalities of the application.
 
 	![Splash screen for the app in Simulator](images/splashscreen-for-the-app-in-simulator.png?raw=true)
 
@@ -448,11 +448,11 @@ Follow these steps to debug your application in a simulator of Windows. The same
 
 1. Switch back to Visual Studio and open **app.js**.
 
-1. Toggle a breakpoint on the line that defines the _addToDoItem_ function by clicking on the gray margin at the left. Alternatively, with the cursor on the line, you can press **F9** or use the **Toggle Breakpoint** option in the **Debug** menu.
+1. Toggle a breakpoint on the line that defines the _addToDoItem_ function by clicking the gray margin to the left. Alternatively, with the cursor on the line, you can press **F9** or use the **Toggle Breakpoint** option in the **Debug** menu.
 
 1. While making sure you are still debugging the application, switch to the Simulator and add a new task.
 
-	Right after the _Add_ button is clicked Visual Studio should be brought to focus, displaying the current execution line at the point where the breakpoint was set.  
+	Right after clicking the _Add_ button, Visual Studio should be brought to focus, displaying the current execution line at the point where the breakpoint was set.  
 
 	![Breakpoint hit in JavaScript Windows](images/breakpoint-hit-in-javascript-windows.png?raw=true)
 
@@ -462,7 +462,7 @@ Follow these steps to debug your application in a simulator of Windows. The same
 
 	It is also possible to view the page that the application is currently displaying by switching to the **DOM Explorer** tab, which is normally opened when debugging. If it is not visible, you can open it by clicking **Show All** in **Debug** > **Windows** > **DOM Explorer**.
 
-	In the **DOM Explorer** view you can see exactly what's being displayed by the application as well as the styles applied to the visual elements. It is also possible to tweak them and see the updates in the app running in the Simulator. This is useful to tweak the user interface.
+	In the **DOM Explorer** view you can see exactly what is being displayed by the application as well as the styles applied to the visual elements. It is also possible to tweak them and see the updates in the app running in the Simulator. This is useful for tweaking the user interface.
 
 	![DOM Explorer View Windows](images/dom-explorer-view-windows.png?raw=true)
 
@@ -473,7 +473,7 @@ Follow these steps to debug your application in a simulator of Windows. The same
 	The app in the Simulator should close, but the Simulator won't close. You can launch the application again in the Simulator by searching for it. Alternatively, you can start debugging again from Visual Studio. 
 
 ###Debug in the Android emulator
-Follow these steps to debug your application in an emulator of Android. The Apache Ripple emulator is a web-based mobile environment simulator designed to enable development of mobile web applications for various frameworks, such as Cordova.
+Follow these steps to debug your application in an Android emulator. The Apache Ripple emulator is a web-based mobile environment simulator designed to enable development of mobile web applications for various frameworks, such as Cordova.
 
 1. In the **Solution Platforms** list, select **Android**.
 
@@ -491,7 +491,7 @@ Follow these steps to debug your application in an emulator of Android. The Apac
 	
 	_Debug the Android version in Ripple_
 
-	At this point, you can set breakpoints in your code in Visual Studio like explained in the previous section and they will be hit. As before, when the breakpoint is hit you should be able to inspect variable values, view the call stack and debug the code by executing it line by line.
+	At this point, you can set breakpoints in your code in Visual Studio as explained in the previous section and they will be hit. As before, when the breakpoint is hit, you should be able to inspect variable values, view the call stack and debug the code by executing it line by line.
 
 	The DOM Explorer is also available.
 
@@ -500,7 +500,7 @@ Follow these steps to debug your application in an emulator of Android. The Apac
 	The emulator will close.
 
 ###Debug in the iOS emulator
-Follow these steps to debug your application in an emulator of iOS. 
+Follow these steps to debug your application in an iOS emulator. 
 
 1. In the **Solution Platforms** list, select **iOS**.
 
@@ -518,32 +518,32 @@ Follow these steps to debug your application in an emulator of iOS.
 
 	_Debug the app in iOS with Ripple_
 
-	At this point, you can set breakpoints in your code in Visual Studio like explained in the previous section and they will be hit. As before, when the breakpoint is hit you should be able to inspect variable values, view the call stack and debug the code by executing it line by line.
+	At this point, you can set breakpoints in your code in Visual Studio as explained in the previous section and they will be hit. As before, when the breakpoint is hit you should be able to inspect variable values, view the call stack and debug the code by executing it line by line.
 
 	The DOM Explorer is also available.
 
 ##Summary
-In this lab you have created a cross-platform application using the Apache Cordova tools from Visual Studio, and shown how to debug it in the different platforms.
+In this lab you have created a cross-platform application using the Apache Cordova tools from Visual Studio and debugged it in the different platforms.
 
 
 ##Appendix
 <a name="CreateSolutionUsingCLI" />
 ##Building the application using the Cordova command-line interface (CLI)
 
-The **Cordova command-line interface (CLI)** is a tool that allows you to build cross-platform projects, abstracting away much of the functionality of lower-level shell scripts. In this section you will briefly learn how to create an application using the CLI. 
-For more information about installation of the Cordova CLI and what it has to offer you can browse the Apache Cordova Documentation pages available [here] (http://cordova.apache.org/docs/en/4.0.0/guide_overview_index.md.html).
+The **Cordova command-line interface (CLI)** is a tool that allows you to build cross-platform projects, abstracting away much of the functionality of lower-level shell scripts. In this section you will briefly describe how to create an application using the CLI. 
+For more information about installation of the Cordova CLI and what it has to offer, you can browse the Apache Cordova Documentation pages available [here] (http://cordova.apache.org/docs/en/4.0.0/guide_overview_index.md.html).
 
 ###Prerequisites:
 
-* Cordova CLI Tool is installed (instructions can be found [here]( http://cordova.apache.org/docs/en/4.0.0/guide_cli_index.md.html#The%20Command-Line%20Interface))
+* Cordova CLI Tool must be installed (instructions can be found [here]( http://cordova.apache.org/docs/en/4.0.0/guide_cli_index.md.html#The%20Command-Line%20Interface))
 
 * SDKs for any platform to be targeted should be installed (instructions can be found [here](http://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides)).
 	
 	For Windows 8.0, Windows 8.1 and Windows Phone 8.1, having Visual Studio 2015 Preview or Visual Studio 2013 Update 4 is sufficient.
 
 ###Steps:
-1.	Open a command line prompt
-1.	Change into the directory where the application code will reside (e.g. MyProjects).
+1.	Open a command line prompt.
+1.	Go to the directory where the application code will reside (e.g. MyProjects).
 1.	Run the following command:
 
 	````PowerShell
@@ -556,13 +556,13 @@ For more information about installation of the Cordova CLI and what it has to of
 
 	This will create a **CordovaToDoCLI** directory (1st argument, so it should not exist) where the application assets will be stored and where the Cordova library is downloaded. The 2nd argument provides your project with a reverse domain-style identifier, and the 3rd one provides the application a display title (in this case, **CordovaToDo**). 
  
-1.	Change into the newly created folder, CordovaToDo, as all commands need to be run from there.
+1.	Go to the newly created folder, CordovaToDo, as all commands need to be run from there.
 
 	````PowerShell
 	cd CordovaToDoCLI
 	````
 
-1.	Specify the set of target platforms by running the following commands (provided your machine supports the SDK and you have it installed in the machine)
+1.	Specify the set of target platforms by running the following commands (provided your machine supports the SDK and it is installed in the machine)
 
 	````PowerShell
 	cordova platform add android
@@ -570,7 +570,7 @@ For more information about installation of the Cordova CLI and what it has to of
 	cordova platform add windows
 	````
 
-	If you wish to verify the set of platforms, run:
+	If you want to verify the set of platforms, run:
 
 	````PowerShell
 	cordova platforms ls
@@ -581,7 +581,7 @@ For more information about installation of the Cordova CLI and what it has to of
 	_Add platforms to the project using the CLI_
 
 
-	For each platform added, a new folder is created under **CordovaToDoCLI/platforms**. These folders will contain a replica of the project’s **www** folder, and should not be modified directly as they are periodically overwritten.
+	For each platform added, a new folder is created under **CordovaToDoCLI/platforms**. These folders will contain a replica of the project’s **www** folder and should not be modified directly as they are periodically overwritten.
 
 	![Platform folders in CLI project](images/platform-folders-in-cli-project.png?raw=true)
 
@@ -597,7 +597,7 @@ For more information about installation of the Cordova CLI and what it has to of
 
 	_Contents of the Windows folder created by the CLI after building_
 
-1. To run the project execute the following command replacing the _[platform]_ placeholder with one of the installed platforms (e.g.: wp8, windows, etc.).
+1. To run the project, execute the following command replacing the _[platform]_ placeholder with one of the installed platforms (e.g.: wp8, windows, etc.).
 
 	````PowerShell
 	cordova emulate [platform]

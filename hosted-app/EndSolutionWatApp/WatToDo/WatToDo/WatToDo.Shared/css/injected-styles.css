@@ -1,0 +1,13 @@
+﻿.reminder {
+    margin: 5px;
+    border: gray 1px solid;
+    float: right;
+}
+
+.todo-item {
+    height: 35px;
+}
+
+button.destroy {
+    float: right;
+}

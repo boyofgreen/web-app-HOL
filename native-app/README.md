@@ -1,7 +1,7 @@
 ﻿Building a native app with JavaScript, HTML and WinJS
 ========================================
 
-In this lab you'll create a native universal application using JavaScript, HTML, CSS and WinJS. Additionally, you will learn how to write a custom WinJS control.
+In this lab you will create a native universal application using JavaScript, HTML, CSS and WinJS. Additionally, you will learn how to write a custom WinJS control.
 
 This lab includes instructions for:
 
@@ -11,7 +11,7 @@ This lab includes instructions for:
 <a name="BuildNativeApp" />
 ##Building a native app with JavaScript and HTML
 
-You will build a native app using JavaScript, HTML and WinJS controls. The app is a simple To Do List app that allows adding To Do items consisting of a description. It is also possible to delete them and toggle their completed status. 
+You will build a native app using JavaScript, HTML and WinJS controls. The app is a simple To Do List app that allows you to add To Do items along with a description. It is also possible to delete them and toggle their completed status. 
 
 The first step is to create a new project to contain the code and resources that will make up the app.
 
@@ -320,7 +320,7 @@ The first step is to create a new project to contain the code and resources that
 	}
 	````
 
-1. Verify that the **NativeToDo.Windows** project is set as startup project (project name should show **in bold**) and that the debug mode is set to **Simulator** in the toolbar.
+1. Verify that the **NativeToDo.Windows** project is set as the startup project (project name should appear **in bold**) and that the debug mode is set to **Simulator** in the toolbar.
 
 	![Set Debug to Simulator](images/set-debug-to-simulator.png?raw=true)
 
@@ -364,13 +364,13 @@ The first step is to create a new project to contain the code and resources that
 	* Packaging tab:
 		* Package (display) name: _To Do_
 
-	If you get prompts to replace files like this one when updating the images, click **Yes**.
+	If you receive prompts like this one to replace files when updating the images, click **Yes**.
 
 	![Replace image when updating manifest](images/replace-image-when-updating-manifest.png?raw=true)
 
 	_Replace image when updating the Visual Assets in the manifest_
 
-1. Press **Ctrl+Shift+F5** or hit the **Restart** button in the toolbar. The application will restart, and the changes just made will be applied.
+1. Press **Ctrl+Shift+F5** or click the **Restart** button in the toolbar. The application will restart, and the changes just made will be applied.
 
 	![Restart Project](images/restart-project.png?raw=true)
 
@@ -461,19 +461,20 @@ The first step is to create a new project to contain the code and resources that
 	* Packaging tab:
 		* Package (display) name: _To Do Phone_
 
-	If you get prompts to replace files like this one when updating the images in the Manifest Designer, click **Yes**.
+	If you receive prompts like this one to replace files when updating the images in the Manifest Designer, click **Yes**.
+
 	![Replace image](images/replace-image.png?raw=true)
 
 	_Replace image when updating the Visual Assets in the manifest_
 
-1. Set the NativeToDo.WindowsPhone project as startup project. 
+1. Set the **NativeToDo.WindowsPhone** project as the startup project. 
 
 	![Set WindowsPhone project as startup project](images/set-windowsphone-project-as-startup-project.png?raw=true)
 
 	_Set NativeToDo.WindowsPhone as startup project_
 
 1. Press **F5** to build and debug the application. 
-	The selected Windows Phone Emulator will launch. If this is the first time you open the emulator, or if it is not open already, it might take a while until the OS loads and the app is deployed and launched.
+	The selected Windows Phone Emulator will launch. If this is the first time you have opened the emulator, or if it is not already open, it might take a while for the OS to load and for the app to deploy and launch.
 	Once the app launches, it will first display a splash screen and then the To Do list. You should be able to add new To Do items and mark them as completed.
 
 	![Windows Phone splash screen](images/windowsphone-splashscreen.png?raw=true)
@@ -489,7 +490,7 @@ The first step is to create a new project to contain the code and resources that
 <a name="BuildWinJSControl" />
 ##Building controls with WinJS
 
-Now you will learn how to write a custom WinJS control that represents a checkbox and replace the WinJS ToggleSwitch control by it.
+Now you will learn how to write a custom WinJS control that represents a checkbox and replace the WinJS ToggleSwitch control with it.
 
 1. Right-click the **js** folder in **NativeToDo.Shared** project and add a new JavaScript file named **checkbox.js**. Copy and paste the code from [NativeToDo.Shared/js/checkbox.js](EndSolution/NativeToDo/NativeToDo/NativeToDo.Shared/js/checkbox.js) (or from the code snippet below) into your newly created file.
 
@@ -587,9 +588,9 @@ Now you will learn how to write a custom WinJS control that represents a checkbo
         </div>
 	````
 
-	What you are doing in the previous steps is:
+	In the previous steps you are:
 	* creating a new WinJS.Class for the control and:
-		* defining a constructor function, named **Control_ctor**, called whenever WinJS finds a new control, to initialize the objects that make up the custom control. In this example that includes:
+		* defining a constructor function, named **Control_ctor**, called whenever WinJS finds a new control, to initialize the objects that make up the custom control. In our example that includes:
 			* creating the visual elements and adding them to the main control element (that should be a _div_), 
 			* setting up default values for all internal members,  
 			* calling the utility function _setOptions_ to apply any options defined by the user in the **data-win-options** property. In this example the values of **labelOn** and **labelOff** are being reset as well.
@@ -597,7 +598,7 @@ Now you will learn how to write a custom WinJS control that represents a checkbo
 	* defining a namespace **MyApp.UI** and including the **Checkbox** class in it. This publishes the control class and exposes it to be accessed by any code in our app. It also allows us to potentially group a set of custom controls in the same namespace.
 	* setting up the event handlers for the control. The call to _WinJS.Class.mix_ adds _addEventListener_, _removeEventListener_ and _dispatchEvent_ functions to the control, for the **onchange** event.
 
-	* In the html file, the updates are to include the reference to the new control and to update the template to use the newly included **MyApp.UI.Checkbox** control (the **data-win-control** property). The following properties were not changed, but some clarification would help understand how the control works:
+	* In the html file, the updates made were to include the reference to the new control and to update the template to use the newly included **MyApp.UI.Checkbox** control (the **data-win-control** property). The following properties were not changed, but some clarification would help understand how the control works:
 		* the **data-win-bind** property, called when data is bound to the control, binds the **onchange** event dispatched by the control to the **toggle** function defined in **data.js**, and also the **checked** property to the **complete** property in the data model. 
 		* the **data-win-options** property redefines the values of some properties, namely **labelOn** and **labelOff**, to new values. 
 
@@ -611,4 +612,4 @@ As before, it should be possible to add new tasks, mark others as completed and 
 
 ##Summary
 
-In this lab you have learned how to create a simple native app that works on Windows and Windows Phone using Html, JavaScript and WinJS, and how to create a custom WinJS control and integrate it into it. 
+In this lab you have learned how to create a simple native app that works on Windows and Windows Phone using Html, JavaScript and WinJS, as well as how to create and integrate a custom WinJS control. 

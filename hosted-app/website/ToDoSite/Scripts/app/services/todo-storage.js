@@ -1,6 +1,6 @@
 ﻿'use strict'
 
-angular.module('site-todo').factory('ToDoStorage', function (ToDo) {
+angular.module('site-todo').factory('ToDoStorage', ['ToDo', function (ToDo) {
     var serviceInstance = {};
 
     serviceInstance.list = function () {
@@ -25,4 +25,4 @@ angular.module('site-todo').factory('ToDoStorage', function (ToDo) {
     }
 
     return serviceInstance;
-});
+}]);

@@ -12,14 +12,15 @@ http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx
 Alternatively, you can use Visual Studio 2013, provided the following have been installed: 
 
 * Visual Studio 2013 Update 4 ([download](http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs))
-* Visual Studio Tools for Apache Cordova CTP3.0 ([download](http://www.microsoft.com/en-us/download/details.aspx?id=42675))
-* Web App Template for Universal Apps
+* Visual Studio Tools for Apache Cordova CTP3.0 ([download](https://wat.codeplex.com/))
 
-	The Web App Template for Universal Apps provides a Visual Studio project template that allows the creation of hosted Windows and Windows Phone 8.1 apps. You can download the latest version of the template from [here](https://wat.codeplex.com/releases/view/125913). Currently, this template only supports Visual Studio 2013 (not Visual Studio 2015). 
+###Web App Template for Universal Apps
+
+The Web App Template for Universal Apps provides a Visual Studio project template that allows the creation of hosted Windows and Windows Phone 8.1 apps. You can download the latest version of the template from [here](https://wat.codeplex.com/releases/view/125913).  
 
 ### Clone or download content of this GitHub repository (optional but recommended)
 
-The labs provided have a combination of text documentation and sample code. In order to have all documentation and all necessary sample files locally on your computer, we strongly recommend you to clone (using [Git](http://git-scm.com/)) or download all content in this repository to your computer.
+The labs provided have a combination of text documentation and sample code. In order to have all documentation and necessary sample files locally on your computer, we strongly recommend you clone (using [Git](http://git-scm.com/)) or download all content in this repository to your computer.
 
 Summary
 -------
